@@ -3,5 +3,18 @@ Simple application demonstrating JanusGraph with a Java back end and a React fro
 
 # Setup
 ```
+# Set up Maven wrapper
 mvn -N io.takari:maven:wrapper -Dmaven=3.6.3
+```
+
+# Running
+```
+# Run back end
+./mvnw spring-boot:run
+```
+
+# Testing
+```
+# Unit tests
+./mvnw test
 ```
