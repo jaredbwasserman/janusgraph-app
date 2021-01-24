@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HomeController {
+public class HelloController {
 
     private final ObjectMapper mapper = new ObjectMapper();
 
     private final HelloService helloService;
 
-    public HomeController(HelloService helloService) {
+    public HelloController(HelloService helloService) {
         this.helloService = helloService;
     }
 
