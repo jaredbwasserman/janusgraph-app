@@ -1,8 +1,8 @@
-package jaredbwasserman.janusgraph.app.controller;
+package com.github.jaredbwasserman.janusgraph.app.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import jaredbwasserman.janusgraph.app.service.HelloService;
+import com.github.jaredbwasserman.janusgraph.app.service.HelloService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

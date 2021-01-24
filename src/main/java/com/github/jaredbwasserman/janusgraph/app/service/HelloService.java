@@ -1,4 +1,4 @@
-package jaredbwasserman.janusgraph.app.service;
+package com.github.jaredbwasserman.janusgraph.app.service;
 
 import org.springframework.stereotype.Service;
 

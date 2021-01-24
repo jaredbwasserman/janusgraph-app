@@ -1,4 +1,4 @@
-package jaredbwasserman.janusgraph.app.controller;
+package com.github.jaredbwasserman.janusgraph.app.controller;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.mockito.Mockito.when;
@@ -7,7 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import jaredbwasserman.janusgraph.app.service.HelloService;
+import com.github.jaredbwasserman.janusgraph.app.service.HelloService;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;

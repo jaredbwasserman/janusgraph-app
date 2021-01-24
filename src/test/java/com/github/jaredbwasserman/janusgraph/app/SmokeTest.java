@@ -1,8 +1,8 @@
-package jaredbwasserman.janusgraph.app;
+package com.github.jaredbwasserman.janusgraph.app;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import jaredbwasserman.janusgraph.app.controller.HelloController;
+import com.github.jaredbwasserman.janusgraph.app.controller.HelloController;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;

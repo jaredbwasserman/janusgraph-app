@@ -1,4 +1,4 @@
-package jaredbwasserman.janusgraph.app;
+package com.github.jaredbwasserman.janusgraph.app;
 
 import org.junit.jupiter.api.Test;
 
