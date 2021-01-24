@@ -19,4 +19,6 @@ mvn -N io.takari:maven:wrapper -Dmaven=3.6.3
 ./mvnw test
 ```
 
-# TODO
+# References Used
+https://spring.io/guides/gs/testing-web/ (LICENSE_COPY_1)  
+https://spring.io/guides/tutorials/react-and-spring-data-rest/

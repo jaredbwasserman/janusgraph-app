@@ -1,3 +1,5 @@
+// Modified from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/test/java/com/example/testingweb/WebMockTest.java
+
 package com.github.jaredbwasserman.janusgraph.app.controller;
 
 import static org.hamcrest.Matchers.containsString;

@@ -1,3 +1,5 @@
+// Modified from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/main/java/com/example/testingweb/GreetingController.java
+
 package com.github.jaredbwasserman.janusgraph.app.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -1,3 +1,5 @@
+// Modified from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/main/java/com/example/testingweb/TestingWebApplication.java
+
 package com.github.jaredbwasserman.janusgraph.app;
 
 import org.springframework.boot.SpringApplication;

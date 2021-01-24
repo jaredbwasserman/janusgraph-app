@@ -1,3 +1,5 @@
+// Modified from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/test/java/com/example/testingweb/SmokeTest.java
+
 package com.github.jaredbwasserman.janusgraph.app;
 
 import static org.assertj.core.api.Assertions.assertThat;
