@@ -1,4 +1,4 @@
-package jaredbwasserman.janusgraph.app.spring;
+package jaredbwasserman.janusgraph.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
