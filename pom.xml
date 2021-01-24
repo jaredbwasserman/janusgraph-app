@@ -8,10 +8,10 @@
         <version>2.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>jaredbwasserman.janusgraph</groupId>
-    <artifactId>app</artifactId>
+    <groupId>com.github.jaredbwasserman</groupId>
+    <artifactId>janusgraph-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>app</name>
+    <name>janusgraph-app</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
