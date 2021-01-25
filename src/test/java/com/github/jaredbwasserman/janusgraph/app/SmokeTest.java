@@ -1,5 +1,4 @@
 // Modified from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/test/java/com/example/testingweb/SmokeTest.java
-// See APACHE_LICENSE_COPY_1
 
 package com.github.jaredbwasserman.janusgraph.app;
 

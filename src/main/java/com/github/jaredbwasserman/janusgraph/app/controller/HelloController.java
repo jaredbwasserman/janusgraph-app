@@ -1,5 +1,4 @@
 // Modified from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/main/java/com/example/testingweb/GreetingController.java
-// See APACHE_LICENSE_COPY_1
 
 package com.github.jaredbwasserman.janusgraph.app.controller;
 
