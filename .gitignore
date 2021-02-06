@@ -7,7 +7,7 @@ mvnw.cmd
 
 ### Node ###
 node_modules/
-!**/src/main/resources/static/built/
+src/main/resources/static/built/
 
 ### IntelliJ IDEA ###
 .idea
