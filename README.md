@@ -1,22 +1,24 @@
 # JanusGraph App
-Simple application demonstrating JanusGraph with a Java back end and a React front end.
+Application demonstrating JanusGraph with Spring Boot and React.
 
 # Setup
-```
-# Set up Maven wrapper
-mvn -N io.takari:maven:wrapper -Dmaven=3.6.3
-```
+1. Set up Maven wrapper
+    ```
+    mvn -N io.takari:maven:wrapper -Dmaven=3.6.3
+    ```
 
 # Running
-```
-./mvnw spring-boot:run
-```
+1. Start application
+    ```
+    ./mvnw spring-boot:run
+    ```
+1. Visit `localhost:8080` in browser
 
 # Testing
-```
-# Unit tests
-./mvnw test
-```
+1. Unit tests
+    ```
+    ./mvnw test
+    ```
 
 # References Used
 https://spring.io/guides/gs/testing-web/  
