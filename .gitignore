@@ -5,6 +5,10 @@ mvnw.cmd
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### Node ###
+node_modules/
+!**/src/main/resources/static/built/
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

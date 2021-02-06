@@ -9,7 +9,6 @@ mvn -N io.takari:maven:wrapper -Dmaven=3.6.3
 
 # Running
 ```
-# Run back end
 ./mvnw spring-boot:run
 ```
 

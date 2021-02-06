@@ -5,6 +5,7 @@ package com.github.jaredbwasserman.janusgraph.app;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.jaredbwasserman.janusgraph.app.controller.HelloController;
+import com.github.jaredbwasserman.janusgraph.app.controller.HomeController;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,12 @@ public class SmokeTest {
     @Autowired
     private HelloController helloController;
 
+    @Autowired
+    private HomeController homeController;
+
     @Test
     public void contextLoads() {
         assertThat(helloController).isNotNull();
+        assertThat(homeController).isNotNull();
     }
 }
