@@ -5,32 +5,24 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const client = require('./client');
+const Graph = require('./Graph')
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {message: ''};
+    this.state = {graph: {}};
   }
 
+  // TODO: Use graph data endpoint instead of hello endpoint
   componentDidMount() {
     client({method: 'GET', path: '/hello'}).done(response => {
-      this.setState({message: `${response.entity.message}`});
+      this.setState({graph: `${response.entity.message}`});
     });
   }
 
   render() {
     return (
-      <Hello message={this.state.message}/>
-    )
-  }
-}
-
-class Hello extends React.Component{
-  render() {
-    return (
-      <div>
-        <p>{this.props.message}</p>
-      </div>
+      <Graph graph={this.state.graph}/>
     )
   }
 }

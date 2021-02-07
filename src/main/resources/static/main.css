@@ -1,9 +1,14 @@
-table {
-    border-collapse: collapse;
+body {
+    color: #E4E6EB;
+    background-color: #18191A;
+    text-align: center;
 }
 
-td, th {
-    border: 1px solid #999;
-    padding: 0.5rem;
-    text-align: left;
+#graph {
+    width: auto;
+    height: 70vh;
+    max-width: 60%;
+    margin: auto;
+    border: 1px solid #E4E6EB;
+    border-radius: 5px;
 }
