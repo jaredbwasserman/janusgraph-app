@@ -1,5 +1,6 @@
 'use strict';
 
+const Vis = require('vis-network/standalone')
 const React = require('react');
 const ReactDOM = require('react-dom');
 
@@ -8,7 +9,7 @@ class Graph extends React.Component {
     // TODO: Use the graph input parameter for data instead of hard-coded
 
     // create an array with nodes
-    const nodes = new vis.DataSet([
+    const nodes = new Vis.DataSet([
       { id: 1, label: `${this.props.graph}` },
       { id: 2, label: "Node 2" },
       { id: 3, label: "Node 3" },
@@ -17,7 +18,7 @@ class Graph extends React.Component {
     ]);
 
     // create an array with edges
-    const edges = new vis.DataSet([
+    const edges = new Vis.DataSet([
       { from: 1, to: 3 },
       { from: 1, to: 2 },
       { from: 2, to: 4 },
@@ -32,7 +33,7 @@ class Graph extends React.Component {
       edges: edges,
     };
     const options = {};
-    const network = new vis.Network(container, data, options);
+    const network = new Vis.Network(container, data, options);
 
     return (null);
   }
