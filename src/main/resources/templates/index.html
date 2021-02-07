@@ -8,10 +8,21 @@
 </head>
 <body>
 
-<div id="react"></div>
+<div class="split left">
+    <div class="centered">
+        <form action=""> <!-- TODO: Retrieve data -->
+            <textarea class="scrollabletextbox" name="q">query</textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
 
-<!-- TODO: Is there a better way to do this? -->
-<div id="graph"></div>
+<div class="split right">
+    <div class="centered">
+        <div id="react"></div>
+        <div id="graph"></div>
+    </div>
+</div>
 
 <!-- vis-network -->
 <script

@@ -34,11 +34,7 @@ class Graph extends React.Component {
     const options = {};
     const network = new vis.Network(container, data, options);
 
-    return (
-      <div>
-        <p>Hello, world!</p>
-      </div>
-    )
+    return (null);
   }
 }
 
