@@ -13,10 +13,10 @@ class App extends React.Component {
     this.state = {graph: {}};
   }
 
-  // TODO: Use graph data endpoint instead of hello endpoint
+  // TODO: Send query string somehow instead of always getting whole graph
   componentDidMount() {
-    client({method: 'GET', path: '/hello'}).done(response => {
-      this.setState({graph: `${response.entity.message}`});
+    client({method: 'GET', path: '/api/query'}).done(response => {
+      this.setState({graph: response.result});
     });
   }
 

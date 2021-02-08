@@ -23,7 +23,7 @@ public class ApplicationTest {
 
     @Test
     public void helloShouldReturnMessage() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/hello",
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/hello",
                 String.class)).contains("Hello, world!");
     }
 }

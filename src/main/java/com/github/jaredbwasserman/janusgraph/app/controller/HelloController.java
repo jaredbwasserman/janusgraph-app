@@ -10,16 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-
     private final ObjectMapper mapper = new ObjectMapper();
-
     private final HelloService helloService;
 
     public HelloController(HelloService helloService) {
         this.helloService = helloService;
     }
 
-    @RequestMapping("/hello")
+    @RequestMapping("/api/hello")
     public ObjectNode helloWorld() {
         final ObjectNode objectNode = mapper.createObjectNode();
         objectNode.put("message", helloService.hello());
