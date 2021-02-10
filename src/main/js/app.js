@@ -5,7 +5,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const client = require('./client');
-const Graph = require('./graph')
+const Graph = require('./graph');
 
 class App extends React.Component {
   constructor(props) {
@@ -15,8 +15,8 @@ class App extends React.Component {
 
   // TODO: Send query string somehow instead of always getting whole graph
   componentDidMount() {
-    client({method: 'GET', path: '/api/query'}).done(response => {
-      this.setState({graph: response.result});
+    client({method: 'GET', path: '/api/query'}).then(response => {
+      this.setState({graph: response.entity.result});
     });
   }
 

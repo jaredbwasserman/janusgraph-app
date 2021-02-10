@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // TODO: Add logging everywhere
+// TODO: Add export to CSV option
 
 @SpringBootApplication
 public class Application {
