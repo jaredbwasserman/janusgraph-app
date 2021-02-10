@@ -61,7 +61,6 @@ class Graph extends React.Component {
       }
     }
     const network = new Vis.Network(container, data, options);
-    network.fit();
 
     return (null);
   }
