@@ -40,7 +40,7 @@ public class GraphService {
 
     // TODO: Fix
     // TODO: Needs to give query result not whole graph eventually
-    public String query() {
+    public String query(String queryString) {
         try {
             ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
             graph.io(IoCore.graphml()).writer().create().writeGraph(byteStream, graph);

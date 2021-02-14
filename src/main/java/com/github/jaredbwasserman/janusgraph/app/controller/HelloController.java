@@ -2,25 +2,23 @@
 
 package com.github.jaredbwasserman.janusgraph.app.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.github.jaredbwasserman.janusgraph.app.model.HelloResult;
 import com.github.jaredbwasserman.janusgraph.app.service.HelloService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-    private final ObjectMapper mapper = new ObjectMapper();
     private final HelloService helloService;
 
     public HelloController(HelloService helloService) {
         this.helloService = helloService;
     }
 
-    @RequestMapping("/api/hello")
-    public ObjectNode helloWorld() {
-        final ObjectNode objectNode = mapper.createObjectNode();
-        objectNode.put("message", helloService.hello());
-        return objectNode;
+    @RequestMapping(value = "/api/hello", method = RequestMethod.GET)
+    public ResponseEntity<HelloResult> helloWorld() {
+        return ResponseEntity.ok(new HelloResult(helloService.hello()));
     }
 }
