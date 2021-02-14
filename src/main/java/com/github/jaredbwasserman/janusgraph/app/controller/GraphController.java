@@ -1,5 +1,6 @@
 package com.github.jaredbwasserman.janusgraph.app.controller;
 
+import com.github.jaredbwasserman.janusgraph.app.model.GraphResult;
 import com.github.jaredbwasserman.janusgraph.app.model.QueryRequest;
 import com.github.jaredbwasserman.janusgraph.app.model.QueryResult;
 import com.github.jaredbwasserman.janusgraph.app.service.GraphService;
@@ -18,6 +19,11 @@ public class GraphController {
 
     public GraphController(GraphService graphService) {
         this.graphService = graphService;
+    }
+
+    @RequestMapping(value = "/api/graph", method = RequestMethod.GET)
+    public ResponseEntity<GraphResult> getGraph() {
+        return ResponseEntity.ok(new GraphResult(graphService.getGraph()));
     }
 
     @RequestMapping(value = "/api/query", method = RequestMethod.POST)

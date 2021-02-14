@@ -3,6 +3,8 @@
 package com.github.jaredbwasserman.janusgraph.app.service;
 
 import com.github.jaredbwasserman.janusgraph.app.util.GraphUtil;
+import org.apache.tinkerpop.gremlin.groovy.engine.GremlinExecutor;
+import org.apache.tinkerpop.gremlin.jsr223.ConcurrentBindings;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.structure.io.IoCore;
 import org.janusgraph.core.JanusGraph;
@@ -22,6 +24,7 @@ public class GraphService {
 
     private final JanusGraph graph;
     private final GraphTraversalSource g;
+    private final GremlinExecutor ge;
 
     // TODO: Make functions that load data instead of hard-coded single db
     // TODO: The different graphs should have different directories so can swap between graphs
@@ -36,19 +39,27 @@ public class GraphService {
             GraphOfTheGodsFactory.load(graph);
             logger.info("Loaded GraphOfTheGodsFactory");
         }
+
+        // Prepare executor
+        ConcurrentBindings b = new ConcurrentBindings();
+        b.putIfAbsent("g", g);
+        ge = GremlinExecutor.build().scriptEvaluationTimeout(15000L).globalBindings(b).create();
     }
 
-    // TODO: Fix
-    // TODO: Needs to give query result not whole graph eventually
-    public String query(String queryString) {
+    public String getGraph() {
         try {
             ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
             graph.io(IoCore.graphml()).writer().create().writeGraph(byteStream, graph);
             return GraphUtil.graphMLToJSON(byteStream.toByteArray());
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
+    }
+
+    // TODO: Fix
+    // TODO: // CompletableFuture<Object> evalResult = ge.eval(queryString);
+    public String query(String queryString) {
+        return "";
     }
 }

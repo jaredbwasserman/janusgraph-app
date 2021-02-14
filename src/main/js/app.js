@@ -13,10 +13,12 @@ class App extends React.Component {
     this.state = {graph: {}};
   }
 
-  // TODO: Send query string somehow instead of always getting whole graph
   componentDidMount() {
-    client({method: 'POST', path: '/api/query', entity: '{"queryString": ""}'}).then(response => {
-      this.setState({graph: response.entity.result});
+    client({
+      method: 'GET',
+      path: '/api/graph'
+    }).then(response => {
+      this.setState({graph: response.entity.graph});
     });
   }
 
