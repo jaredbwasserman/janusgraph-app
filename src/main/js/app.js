@@ -24,12 +24,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <Graph graph={this.state.graph}/>
-    )
+      <Graph graph={this.state.graph} />
+    );
   }
 }
 
 ReactDOM.render(
   <App />,
   document.getElementById('react')
-)
+);

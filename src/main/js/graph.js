@@ -1,6 +1,7 @@
 'use strict';
 
-const Vis = require('vis-network/standalone')
+const Vis = require('vis-network/standalone');
+const VisReact = require('react-vis-network-graph').default;
 const React = require('react');
 const ReactDOM = require('react-dom');
 
@@ -17,10 +18,6 @@ class Graph extends React.Component {
       return (null);
     }
 
-    // Create empty DataSets
-    const nodes = new Vis.DataSet();
-    const edges = new Vis.DataSet();
-
     // Parse input
     const parsed = Vis.parseGephiNetwork(JSON.parse(this.props.graph), {});
 
@@ -34,15 +31,10 @@ class Graph extends React.Component {
       delete edge.color;
     });
 
-    // Add the parsed and transformed data to the DataSets
-    nodes.add(parsed.nodes);
-    edges.add(parsed.edges);
-
-    // Create a network
-    const container = document.getElementById("graph");
+    // Configure network
     const data = {
-      nodes: nodes,
-      edges: edges,
+      nodes: parsed.nodes,
+      edges: parsed.edges,
     };
     const options = {
       nodes: {
@@ -58,11 +50,34 @@ class Graph extends React.Component {
             background: '#D2E5FF'
           }
         }
+      },
+      edges: {
+        color: {
+          color: '#848484',
+          highlight: '#848484',
+          hover: '#848484',
+          inherit: 'from',
+          opacity: 1.0
+        }
       }
-    }
-    const network = new Vis.Network(container, data, options);
+    };
+    const events = {
+      select: function(event) {
+        var { nodes, edges } = event;
 
-    return (null);
+        // TODO: Remove log statements
+        console.log("Selected nodes:");
+        console.log(nodes);
+        console.log("Selected edges:");
+        console.log(edges);
+      }
+    };
+
+    return(
+      <div id="graph">
+        <VisReact graph={data} options={options} events={events} />
+      </div>
+    );
   }
 }
 
