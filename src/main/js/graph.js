@@ -39,6 +39,16 @@ class Graph extends React.Component {
       delete edge.color;
     });
 
+    // Create maps to use for node info
+    const nodeLookup = {};
+    parsed.nodes.forEach((node) => {
+      nodeLookup[node.id] = node;
+    });
+    const edgeLookup = {};
+    parsed.edges.forEach((edge) => {
+      edgeLookup[edge.id] = edge;
+    });
+
     // Configure network
     const data = {
       nodes: parsed.nodes,
@@ -81,10 +91,16 @@ class Graph extends React.Component {
         this.setState({info: ''});
       }
       else {
-        // TODO: Remove
-        console.log(nodes[0]);
+        const nodeInfo = [];
+        nodes.forEach((nodeId) => {
+          nodeInfo.push(nodeLookup[nodeId]);
+        });
+        const edgeInfo = [];
+        edges.forEach((edgeId) => {
+          edgeInfo.push(edgeLookup[edgeId]);
+        });
 
-        this.setState({info: JSON.stringify({nodes: nodes,edges: edges}, null, 2)});
+        this.setState({info: JSON.stringify({nodes: nodeInfo,edges: edgeInfo}, null, 2)});
       }
     };
     const updateCursor = (cursorStyle) => {
