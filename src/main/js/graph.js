@@ -12,6 +12,13 @@ const ReactDOM = require('react-dom');
 // TODO: Why does it load twice?
 
 class Graph extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      info: '',
+    }
+  }
+
   render() {
     // Exit early if empty input
     if (Object.keys(this.props.graph).length === 0) {
@@ -61,22 +68,41 @@ class Graph extends React.Component {
         }
       }
     };
-    const events = {
-      select: function(event) {
-        var { nodes, edges } = event;
 
-        // TODO: Remove log statements
-        console.log("Selected nodes:");
-        console.log(nodes);
-        console.log("Selected edges:");
-        console.log(edges);
+    // Configure events
+    const updateState = (nodes, edges) => {
+      if ((nodes === undefined || nodes.length == 0) && (edges === undefined || edges.length == 0)) {
+        this.setState({info: ''});
+      }
+      else {
+        this.setState({info: JSON.stringify({nodes: nodes,edges: edges}, null, 2)});
+      }
+    };
+    const events = {
+      select: function(e) {
+        const { nodes, edges } = e;
+        updateState(nodes, edges);
       }
     };
 
     return(
-      <div id="graph">
-        <VisReact graph={data} options={options} events={events} />
-      </div>
+      <>
+        <div className="split col2">
+          <div className="centered">
+            <div id="graph">
+              <VisReact graph={data} options={options} events={events} />
+            </div>
+          </div>
+        </div>
+        <div className="split col3">
+          <div className="centered">
+            <textarea readOnly
+              className='graph-info'
+              placeholder='Click on graph elements to display more info here.'
+              value={this.state.info}></textarea>
+          </div>
+        </div>
+      </>
     );
   }
 }

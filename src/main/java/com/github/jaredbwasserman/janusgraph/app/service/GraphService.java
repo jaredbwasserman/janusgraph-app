@@ -5,7 +5,6 @@ package com.github.jaredbwasserman.janusgraph.app.service;
 import com.github.jaredbwasserman.janusgraph.app.util.GraphUtil;
 import org.apache.tinkerpop.gremlin.groovy.engine.GremlinExecutor;
 import org.apache.tinkerpop.gremlin.jsr223.ConcurrentBindings;
-import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.structure.io.IoCore;
 import org.janusgraph.core.JanusGraph;

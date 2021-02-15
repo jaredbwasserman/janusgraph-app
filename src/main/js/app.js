@@ -31,11 +31,7 @@ class App extends React.Component {
             <Query />
           </div>
         </div>
-        <div className="split col2">
-          <div className="centered">
-            <Graph graph={this.state.graph} />
-          </div>
-        </div>
+        <Graph graph={this.state.graph} />
       </>
     );
   }

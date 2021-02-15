@@ -58,3 +58,10 @@
   height: 94vh;
   border: 1px solid lightgray;
 }
+
+.graph-info {
+  width: 22vw;
+  height: 94vh;
+  overflow: auto;
+  resize: none;
+}
