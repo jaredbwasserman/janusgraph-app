@@ -6,6 +6,7 @@ import com.github.jaredbwasserman.janusgraph.app.util.GraphUtil;
 import org.apache.tinkerpop.gremlin.groovy.engine.GremlinExecutor;
 import org.apache.tinkerpop.gremlin.jsr223.ConcurrentBindings;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
+import org.apache.tinkerpop.gremlin.process.traversal.strategy.verification.ReadOnlyStrategy;
 import org.apache.tinkerpop.gremlin.structure.io.IoCore;
 import org.janusgraph.core.JanusGraph;
 import org.janusgraph.core.JanusGraphFactory;
@@ -34,7 +35,7 @@ public class GraphService {
     // TODO: Graph and traversal need to not be instance variables anymore
     public GraphService() {
         graph = JanusGraphFactory.open("conf/janusgraph-berkeleyje-lucene.properties");
-        g = graph.traversal();
+        g = graph.traversal().withStrategies(ReadOnlyStrategy.instance());
         if (g.V().count().next() == 0) {
             // load the schema and graph data
             GraphOfTheGodsFactory.load(graph);
@@ -58,12 +59,10 @@ public class GraphService {
         }
     }
 
-    // TODO: Fix
     public String query(String queryString) {
         CompletableFuture<Object> evalResult = ge.eval(queryString);
 
         try {
-            // TODO: Prevent any graph mutation (read-only)
             Object result = evalResult.get();
             if (result == null) {
                 return "";
