@@ -24,7 +24,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <Graph graph={this.state.graph} />
+      <>
+        <div class="split left">
+          <div class="centered">
+            <form action="/api/query" method="POST" name="queryForm">
+              <textarea class="scrollabletextbox" placeholder="Enter Gremlin query here..." name="queryString"></textarea>
+            </form>
+          </div>
+        </div>
+        <div class="split right">
+          <div class="centered">
+            <Graph graph={this.state.graph} />
+          </div>
+        </div>
+      </>
     );
   }
 }
