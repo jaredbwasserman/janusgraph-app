@@ -98,7 +98,7 @@ class Graph extends React.Component {
           <div className="centered">
             <textarea readOnly
               className='graph-info'
-              placeholder='Click on graph elements to display more info here.'
+              placeholder='Information will appear here after a graph element is clicked.'
               value={this.state.info}></textarea>
           </div>
         </div>

@@ -28,16 +28,36 @@ class Query extends React.Component {
   }
 
   render() {
+    const formatResult = (result) => {
+      if (!result || result === '') {
+        return '';
+      }
+      else {
+        var parsed;
+        try {
+          parsed = JSON.parse(this.state.result);
+          return JSON.stringify(parsed, null, 2);
+        }
+        catch (e) {
+          return this.state.result;
+        }
+      }
+    }
+
     return(
       <>
-        <textarea className='query-request'
-          placeholder='Type Gremlin query here and then press Shift+Enter or Control+Enter to send.'
-          onKeyDown={this.handleChange.bind(this)}></textarea>
-        <div id="query-separator"></div>
-        <textarea readOnly
-          className='query-result'
-          placeholder='Query result here...'
-          value={this.state.result}></textarea>
+        <div className="split col1">
+          <div className="centered">
+            <textarea className='query-request'
+              placeholder='Type a Gremlin query here and then press Shift+Enter or Control+Enter to send the query.'
+              onKeyDown={this.handleChange.bind(this)}></textarea>
+            <div id="query-separator"></div>
+            <textarea readOnly
+              className='query-result'
+              placeholder='Query results will appear here after a query is sent.'
+              value={formatResult(this.state.result)}></textarea>
+          </div>
+        </div>
       </>
     );
   }

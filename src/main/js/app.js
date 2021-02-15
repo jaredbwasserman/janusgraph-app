@@ -26,11 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div className="split col1">
-          <div className="centered">
-            <Query />
-          </div>
-        </div>
+        <Query />
         <Graph graph={this.state.graph} />
       </>
     );
