@@ -6,6 +6,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const client = require('./client');
 const Graph = require('./graph');
+const Query = require('./query');
 
 class App extends React.Component {
   constructor(props) {
@@ -25,15 +26,13 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div class="split left">
-          <div class="centered">
-            <form action="/api/query" method="POST" name="queryForm">
-              <textarea class="scrollabletextbox" placeholder="Enter Gremlin query here..." name="queryString"></textarea>
-            </form>
+        <div className="split col1">
+          <div className="centered">
+            <Query />
           </div>
         </div>
-        <div class="split right">
-          <div class="centered">
+        <div className="split col2">
+          <div className="centered">
             <Graph graph={this.state.graph} />
           </div>
         </div>

@@ -5,6 +5,7 @@ package com.github.jaredbwasserman.janusgraph.app.service;
 import com.github.jaredbwasserman.janusgraph.app.util.GraphUtil;
 import org.apache.tinkerpop.gremlin.groovy.engine.GremlinExecutor;
 import org.apache.tinkerpop.gremlin.jsr223.ConcurrentBindings;
+import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.structure.io.IoCore;
 import org.janusgraph.core.JanusGraph;
@@ -15,8 +16,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
+import java.util.concurrent.CompletableFuture;
 
-// TODO: Add tests
+// TODO: Add tests and logging
 
 @Service
 public class GraphService {
@@ -52,14 +54,21 @@ public class GraphService {
             graph.io(IoCore.graphml()).writer().create().writeGraph(byteStream, graph);
             return GraphUtil.graphMLToJSON(byteStream.toByteArray());
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // TODO: Log
             return "";
         }
     }
 
     // TODO: Fix
-    // TODO: // CompletableFuture<Object> evalResult = ge.eval(queryString);
     public String query(String queryString) {
-        return "";
+        CompletableFuture<Object> evalResult = ge.eval(queryString);
+
+        try {
+            // TODO: Prevent any graph mutation (read-only)
+            return evalResult.get().toString();
+        } catch (Exception e) {
+            e.printStackTrace(); // TODO: Log
+            return e.getMessage();
+        }
     }
 }

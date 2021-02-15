@@ -31,7 +31,7 @@ public class GraphUtil {
         try {
             container = importController.importFile(new ByteArrayInputStream(bytes), new ImporterGraphML());
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // TODO: Log
             return "";
         }
 
@@ -44,7 +44,7 @@ public class GraphUtil {
         try {
             exportController.exportWriter(stringWriter, new JSONExporter());
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // TODO: Log
             return "";
         }
 
