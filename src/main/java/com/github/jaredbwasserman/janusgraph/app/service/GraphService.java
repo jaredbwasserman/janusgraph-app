@@ -65,7 +65,11 @@ public class GraphService {
 
         try {
             // TODO: Prevent any graph mutation (read-only)
-            return evalResult.get().toString();
+            Object result = evalResult.get();
+            if (result == null) {
+                return "";
+            }
+            return result.toString();
         } catch (Exception e) {
             e.printStackTrace(); // TODO: Log
             return e.getMessage();
