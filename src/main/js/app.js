@@ -27,7 +27,7 @@ class App extends React.Component {
     return (
       <>
         <Query />
-        <Graph graph={this.state.graph} />
+        <Graph graphId='graph' graph={this.state.graph} />
       </>
     );
   }
