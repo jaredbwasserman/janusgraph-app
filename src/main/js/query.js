@@ -51,16 +51,13 @@ class Query extends React.Component {
     return(
       <>
         <div className="split col1">
-          <div className="centered">
-            <textarea className='query-request'
-              placeholder='Type a Gremlin query here and then press Shift+Enter or Control+Enter to send the query.'
-              onKeyDown={this.handleChange.bind(this)}></textarea>
-            <div id="query-separator"></div>
-            <textarea readOnly
-              className='query-result'
-              placeholder='Query results will appear here after a query is sent.'
-              value={formatResult(this.state.result)}></textarea>
-          </div>
+          <textarea className='query-request'
+            placeholder='Type a Gremlin query here and then press Shift+Enter or Control+Enter to send the query.'
+            onKeyDown={this.handleChange.bind(this)}></textarea>
+          <textarea readOnly
+            className='query-result'
+            placeholder='Query results will appear here after a query is sent.'
+            value={formatResult(this.state.result)}></textarea>
         </div>
       </>
     );

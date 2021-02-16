@@ -156,19 +156,15 @@ class Graph extends React.Component {
     return(
       <>
         <div className='split col2'>
-          <div className='centered'>
-            <div id={this.state.graphId}>
-              <VisReact graph={data} options={options} events={events} />
-            </div>
+          <div id={this.state.graphId}>
+            <VisReact graph={data} options={options} events={events} />
           </div>
         </div>
         <div className='split col3'>
-          <div className='centered'>
-            <textarea readOnly
-              className='graph-info'
-              placeholder='Information will appear here after a graph element is clicked.'
-              value={this.state.info}></textarea>
-          </div>
+          <textarea readOnly
+            className='graph-info'
+            placeholder='Information will appear here after a graph element is clicked.'
+            value={this.state.info}></textarea>
         </div>
       </>
     );

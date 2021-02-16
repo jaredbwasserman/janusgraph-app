@@ -6,7 +6,7 @@ Copy of full license is located at licenses/tut-react-and-spring-data-rest/LICEN
 Modifications:
 The Employee and EmployeeList Components were removed.
 API calls were updated to be janusgraph-app specific.
-Rendered Components were updated to Query and Graph.
+Rendered Components were updated.
  */
 
 /*
@@ -20,6 +20,7 @@ const ReactDOM = require('react-dom');
 const client = require('./client');
 const Graph = require('./graph');
 const Query = require('./query');
+const Bar = require('./bar');
 
 class App extends React.Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <Bar />
         <Query />
         <Graph graphId='graph' graph={this.state.graph} />
       </>

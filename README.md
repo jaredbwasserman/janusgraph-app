@@ -25,3 +25,4 @@ Application demonstrating JanusGraph with Spring Boot and React.
 * https://spring.io/guides/tutorials/react-and-spring-data-rest/
 * https://github.com/pluradj/janusgraph-java-example
 * https://github.com/oxfordinternetinstitute/gephi-plugins/tree/jsonexporter-plugin
+* https://github.com/visjs/vis-network

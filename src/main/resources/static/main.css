@@ -1,11 +1,6 @@
-* {
-  top: 0;
+.split {
   color: #E4E6EB;
   background-color: #121212;
-  text-align: left;
-}
-
-.split {
   height: 100%;
   position: fixed;
   z-index: 1;
@@ -27,41 +22,39 @@
   left: 75%;
 }
 
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+textarea {
+  color: #E4E6EB;
+  background-color: #121212;
+  text-align: left;
+  display: block;
+  border: none;
+  outline: none;
 }
 
 .query-request {
-  width: 22vw;
-  height: 20vh;
+  width: 25vw;
+  height: 25vh;
   overflow: auto;
   resize: none;
   background-color: #18191A;
 }
 
-#query-separator {
-  height: 2vh;
-}
-
 .query-result {
-  width: 22vw;
-  height: 70vh;
+  width: 25vw;
+  height: 65vh;
   overflow: auto;
   resize: none;
 }
 
 #graph {
-  width: 47vw;
-  height: 94vh;
-  border: 1px solid lightgray;
+  width: 50vw;
+  height: 90vh;
+  outline: none;
 }
 
 .graph-info {
-  width: 22vw;
-  height: 94vh;
+  width: 25vw;
+  height: 90vh;
   overflow: auto;
   resize: none;
 }
