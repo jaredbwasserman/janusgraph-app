@@ -1,3 +1,20 @@
+/*
+Portions of file copied from
+  https://github.com/visjs/vis-network/blob/master/examples/network/data/importingFromGephi.html
+  https://github.com/visjs/vis-network/blob/master/examples/network/other/cursorChange.html
+Files copied on 2021-02-15.
+Copy of full license is located at licenses/vis-network/LICENSE.
+
+Modifications:
+Only code surrounded by the "code copied from importingFromGephi" section below was taken from importingFromGephi.
+Only code surrounded by the "code copied from cursorChange" section below was taken from cursorChange.
+The applicable code sections were modified to match the style of this file.
+ */
+
+/*
+Code original to janusgraph-app is covered by top-level LICENSE (MIT).
+ */
+
 'use strict';
 
 const Vis = require('vis-network/standalone');
@@ -84,8 +101,7 @@ class Graph extends React.Component {
     };
 
     // Configure events
-    // Info display logic based on https://github.com/visjs/vis-network/blob/master/examples/network/data/importingFromGephi.html
-    // Cursor update logic based on https://github.com/visjs/vis-network/blob/master/examples/network/other/cursorChange.html
+    //----- START code copied from importingFromGephi -----//
     const updateState = (nodes, edges) => {
       if ((nodes === undefined || nodes.length == 0) && (edges === undefined || edges.length == 0)) {
         this.setState({info: ''});
@@ -103,6 +119,8 @@ class Graph extends React.Component {
         this.setState({info: JSON.stringify({nodes: nodeInfo,edges: edgeInfo}, null, 2)});
       }
     };
+    //----- END code copied from importingFromGephi -----//
+    //----- START code copied from cursorChange -----//
     const updateCursor = (cursorStyle) => {
       document.getElementById(this.state.graphId).getElementsByTagName('canvas')[0].style.cursor = cursorStyle;
     };
@@ -133,6 +151,7 @@ class Graph extends React.Component {
         updateCursor('grab');
       },
     };
+    //----- END code copied from cursorChange -----//
 
     return(
       <>

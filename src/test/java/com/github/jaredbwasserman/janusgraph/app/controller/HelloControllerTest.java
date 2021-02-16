@@ -1,4 +1,17 @@
-// Modified from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/test/java/com/example/testingweb/WebMockTest.java
+/*
+File copied from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/test/java/com/example/testingweb/WebMockTest.java
+File copied on 2021-01-24.
+Copy of full license is located at licenses/gs-testing-web/LICENSE.
+
+Modifications:
+"HelloService" was used instead of "GreetingService".
+"Hello, Mock" was changed to "Hello, mock!".
+The package definition was changed.
+ */
+
+/*
+Code original to janusgraph-app is covered by top-level LICENSE (MIT).
+ */
 
 package com.github.jaredbwasserman.janusgraph.app.controller;
 

@@ -1,4 +1,16 @@
-// Modified from https://github.com/pluradj/janusgraph-java-example/blob/master/src/main/java/pluradj/janusgraph/example/JavaExample.java
+/*
+File copied from https://github.com/pluradj/janusgraph-java-example/blob/master/src/main/java/pluradj/janusgraph/example/JavaExample.java
+File copied on 2021-02-08.
+Copy of full license is located at licenses/janusgraph-java-example/LICENSE.
+
+Modifications:
+Only code surrounded by the "code copied from janusgraph-java-example" (and applicable imports) section below was taken from the referenced file.
+The applicable code section was slightly modified to include logging and a read-only traversal.
+ */
+
+/*
+Code original to janusgraph-app is covered by top-level LICENSE (MIT).
+ */
 
 package com.github.jaredbwasserman.janusgraph.app.service;
 
@@ -38,6 +50,7 @@ public class GraphService {
     // TODO: Which graph to use would need to be passed in
     // TODO: Graph and traversal need to not be instance variables anymore
     public GraphService() {
+        //----- START code copied from janusgraph-java-example -----//
         graph = JanusGraphFactory.open("conf/janusgraph-berkeleyje-lucene.properties");
         g = graph.traversal().withStrategies(ReadOnlyStrategy.instance());
         if (g.V().count().next() == 0) {
@@ -45,6 +58,7 @@ public class GraphService {
             GraphOfTheGodsFactory.load(graph);
             logger.info("Loaded GraphOfTheGodsFactory");
         }
+        //----- END code copied from janusgraph-java-example -----//
 
         // Prepare executor for queries
         ConcurrentBindings b = new ConcurrentBindings();

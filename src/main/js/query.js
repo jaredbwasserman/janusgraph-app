@@ -1,3 +1,7 @@
+/*
+Code original to janusgraph-app is covered by top-level LICENSE (MIT).
+ */
+
 'use strict';
 
 const React = require('react');

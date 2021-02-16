@@ -15,6 +15,16 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/license
  */
+
+/*
+File copied from https://github.com/oxfordinternetinstitute/gephi-plugins/blob/jsonexporter-plugin/modules/JsonExporter/src/main/java/uk/ac/ox/oii/jsonexporter/JSONExporter.java
+File copied on 2021-02-08.
+Copy of full license is located at licenses/jsonexporter-plugin/LICENSE.
+
+Modifications:
+The package definition was changed, but the rest of the code is unmodified.
+ */
+
 package com.github.jaredbwasserman.janusgraph.app.util.jsonexporter;
 
 import com.google.gson.Gson;

@@ -1,4 +1,18 @@
-// Modified from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/test/java/com/example/testingweb/HttpRequestTest.java
+/*
+File copied from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/test/java/com/example/testingweb/HttpRequestTest.java
+File copied on 2021-01-24.
+Copy of full license is located at licenses/gs-testing-web/LICENSE.
+
+Modifications:
+The endpoint was changed to "/api/hello".
+"Hello, World" was changed to "Hello, world!".
+The test name was changed.
+The package definition was changed.
+ */
+
+/*
+Code original to janusgraph-app is covered by top-level LICENSE (MIT).
+ */
 
 package com.github.jaredbwasserman.janusgraph.app;
 

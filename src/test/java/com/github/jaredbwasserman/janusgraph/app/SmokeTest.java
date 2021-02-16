@@ -1,4 +1,16 @@
-// Modified from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/test/java/com/example/testingweb/SmokeTest.java
+/*
+File copied from https://github.com/spring-guides/gs-testing-web/blob/master/complete/src/test/java/com/example/testingweb/SmokeTest.java
+File copied on 2021-01-24.
+Copy of full license is located at licenses/gs-testing-web/LICENSE.
+
+Modifications:
+Additional controllers were added and tested.
+The package definition was changed.
+ */
+
+/*
+Code original to janusgraph-app is covered by top-level LICENSE (MIT).
+ */
 
 package com.github.jaredbwasserman.janusgraph.app;
 
