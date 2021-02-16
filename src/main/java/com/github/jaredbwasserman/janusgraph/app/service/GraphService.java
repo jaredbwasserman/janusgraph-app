@@ -20,9 +20,6 @@ import org.apache.tinkerpop.gremlin.jsr223.ConcurrentBindings;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.process.traversal.strategy.verification.ReadOnlyStrategy;
 import org.apache.tinkerpop.gremlin.structure.io.IoCore;
-import org.apache.tinkerpop.gremlin.structure.io.graphson.GraphSONMapper;
-import org.apache.tinkerpop.gremlin.structure.io.graphson.GraphSONVersion;
-import org.apache.tinkerpop.shaded.jackson.databind.ObjectMapper;
 import org.janusgraph.core.JanusGraph;
 import org.janusgraph.core.JanusGraphFactory;
 import org.janusgraph.example.GraphOfTheGodsFactory;
@@ -42,7 +39,6 @@ public class GraphService {
     private final JanusGraph graph;
     private final GraphTraversalSource g;
     private final GremlinExecutor ge;
-    private final ObjectMapper mapper;
 
     // TODO: Make functions that load data instead of hard-coded single db
     // TODO: The different graphs should have different directories so can swap between graphs
@@ -64,9 +60,6 @@ public class GraphService {
         ConcurrentBindings b = new ConcurrentBindings();
         b.putIfAbsent("g", g);
         ge = GremlinExecutor.build().scriptEvaluationTimeout(15000L).globalBindings(b).create();
-
-        // Prepare mapper to format query output
-        mapper = GraphSONMapper.build().version(GraphSONVersion.V1_0).create().createMapper();
     }
 
     public String getGraph() {
@@ -88,7 +81,7 @@ public class GraphService {
             if (result == null) {
                 return "";
             }
-            return mapper.writeValueAsString(result);
+            return result.toString();
         } catch (Exception e) {
             e.printStackTrace(); // TODO: Log
             return e.getMessage();

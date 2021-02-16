@@ -1,3 +1,7 @@
+* {
+	font-family: monaco,Consolas,Lucida Console,monospace;
+}
+
 .split {
   color: #E4E6EB;
   background-color: #121212;
@@ -34,6 +38,7 @@ textarea {
 .query-request {
   width: 25vw;
   height: 25vh;
+  font-size: 14px;
   overflow: auto;
   resize: none;
   background-color: #18191A;
@@ -42,6 +47,7 @@ textarea {
 .query-result {
   width: 25vw;
   height: 65vh;
+  font-size: 14px;
   overflow: auto;
   resize: none;
 }
@@ -55,6 +61,7 @@ textarea {
 .graph-info {
   width: 25vw;
   height: 90vh;
+  font-size: 14px;
   overflow: auto;
   resize: none;
 }
