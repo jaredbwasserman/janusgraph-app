@@ -55,7 +55,7 @@ class Query extends React.Component {
       <>
         <div className="split col1">
           <textarea className='query-request'
-            placeholder='Type a Gremlin query here and then press Shift+Enter or Control+Enter to send the query.'
+            placeholder='Type a Gremlin query here and then press Shift+Enter or Control+Enter to send the query. Separate multiple statements with semicolons.'
             onKeyDown={this.handleChange.bind(this)}></textarea>
           <textarea readOnly
             className='query-result'

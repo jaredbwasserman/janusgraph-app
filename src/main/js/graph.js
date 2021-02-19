@@ -22,6 +22,7 @@ const VisReact = require('react-vis-network-graph').default;
 const React = require('react');
 const ReactDOM = require('react-dom');
 
+// TODO: Syntax highlighting for node info
 // TODO: Add node content in and make it look like https://visjs.github.io/vis-network/examples/network/data/importingFromGephi.html
 // TODO: See https://github.com/visjs/vis-network/blob/master/examples/network/data/importingFromGephi.html
 // TODO: Add hover text too that would be cool
@@ -50,10 +51,25 @@ class Graph extends React.Component {
     parsed.nodes.forEach(node => {
       // Remove color
       delete node.color;
+
+      // Assign name (or label if name is missing)
+      if (node.hasOwnProperty('attributes')) {
+        if (node.attributes.hasOwnProperty('name')) {
+          node.label = node.attributes.name;
+        }
+        else if (node.attributes.hasOwnProperty('labelV')) {
+          node.label = node.attributes.labelV;
+        }
+      }
     });
     parsed.edges.forEach(edge => {
       // Remove color
       delete edge.color;
+
+      // Assign label
+      if (edge.hasOwnProperty('attributes') && edge.attributes.hasOwnProperty('labelE')) {
+        edge.label = edge.attributes.labelE;
+      }
     });
 
     // Create maps to use for node info
@@ -74,49 +90,61 @@ class Graph extends React.Component {
     const options = {
       nodes: {
         color: {
-          border: '#2B7CE9',
-          background: '#97C2FC',
+          border: '#174787',
+          background: '#0a0742',
           highlight: {
             border: '#2B7CE9',
-            background: '#D2E5FF',
+            background: '#130c8a',
           },
           hover: {
             border: '#2B7CE9',
-            background: '#D2E5FF',
+            background: '#130c8a',
           }
-        }
+        },
+        font: {
+          mono: {
+            face: 'monaco,Consolas,Lucida Console,monospace',
+          },
+          color: '#E4E6EB',
+          strokeWidth: 0,
+        },
       },
       edges: {
         color: {
-          color: '#848484',
-          highlight: '#848484',
-          hover: '#848484',
+          color: '#174787',
+          highlight: '#2B7CE9',
+          hover: '#2B7CE9',
           inherit: 'from',
           opacity: 1.0,
-        }
+        },
+        font: {
+          mono: {
+            face: 'monaco,Consolas,Lucida Console,monospace',
+          },
+          color: '#E4E6EB',
+          strokeWidth: 0,
+        },
       },
       interaction: {
         hover: true,
+        selectConnectedEdges: false,
+        multiselect: false,
       }
     };
 
     // Configure events
     //----- START code copied from importingFromGephi -----//
     const updateState = (nodes, edges) => {
-      if ((nodes === undefined || nodes.length == 0) && (edges === undefined || edges.length == 0)) {
+      if ((nodes === undefined || nodes.length === 0) && (edges === undefined || edges.length === 0)) {
         this.setState({info: ''});
       }
       else {
-        const nodeInfo = [];
-        nodes.forEach((nodeId) => {
-          nodeInfo.push(nodeLookup[nodeId]);
-        });
-        const edgeInfo = [];
-        edges.forEach((edgeId) => {
-          edgeInfo.push(edgeLookup[edgeId]);
-        });
-
-        this.setState({info: JSON.stringify({nodes: nodeInfo,edges: edgeInfo}, null, 2)});
+        if (nodes !== undefined && nodes.length > 0) {
+          this.setState({info: JSON.stringify(nodeLookup[nodes[0]], null, 2)});
+        }
+        else if (edges !== undefined && edges.length > 0) {
+          this.setState({info: JSON.stringify(edgeLookup[edges[0]], null, 2)});
+        }
       }
     };
     //----- END code copied from importingFromGephi -----//
