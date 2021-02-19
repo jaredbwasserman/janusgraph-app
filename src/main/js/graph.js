@@ -89,16 +89,17 @@ class Graph extends React.Component {
     };
     const options = {
       nodes: {
+        borderWidth: 2,
         color: {
           border: '#174787',
-          background: '#0a0742',
+          background: '#121212',
           highlight: {
             border: '#2B7CE9',
-            background: '#130c8a',
+            background: '#121212',
           },
           hover: {
             border: '#2B7CE9',
-            background: '#130c8a',
+            background: '#121212',
           }
         },
         font: {
@@ -107,6 +108,7 @@ class Graph extends React.Component {
           },
           color: '#E4E6EB',
           strokeWidth: 0,
+          size: 14,
         },
       },
       edges: {
@@ -123,6 +125,7 @@ class Graph extends React.Component {
           },
           color: '#E4E6EB',
           strokeWidth: 0,
+          size: 12,
         },
       },
       interaction: {
