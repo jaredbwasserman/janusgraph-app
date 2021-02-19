@@ -2,6 +2,9 @@
 Code original to janusgraph-app is covered by top-level LICENSE (MIT).
  */
 
+// TODO: Syntax highlighting for query request script
+// TODO: Syntax highlighting and formatting for query response output
+
 'use strict';
 
 const React = require('react');

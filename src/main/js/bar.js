@@ -2,6 +2,8 @@
 Code original to janusgraph-app is covered by top-level LICENSE (MIT).
  */
 
+ // TODO: Get rid of jsonexporter code and LICENSE and references used in README and link on nav bar
+
 'use strict';
 
 const React = require('react');
