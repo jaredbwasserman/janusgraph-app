@@ -2,8 +2,6 @@
 Code original to janusgraph-app is covered by top-level LICENSE (MIT).
  */
 
- // TODO: Get rid of jsonexporter code and LICENSE and references used in README and link on nav bar
-
 'use strict';
 
 const React = require('react');
@@ -29,7 +27,7 @@ class Bar extends React.Component {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="https://github.com/jaredbwasserman/janusgraph-app/blob/main/licenses/jsonexporter-plugin/LICENSE" target="_blank">Gephi JSON Exporter Code License</Nav.Link>
+            <Nav.Link href="https://github.com/jaredbwasserman/janusgraph-app" target="_blank">Source Code</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

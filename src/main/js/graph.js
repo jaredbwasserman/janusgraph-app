@@ -23,11 +23,6 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 
 // TODO: Syntax highlighting for node info
-// TODO: Add node content in and make it look like https://visjs.github.io/vis-network/examples/network/data/importingFromGephi.html
-// TODO: See https://github.com/visjs/vis-network/blob/master/examples/network/data/importingFromGephi.html
-// TODO: Add hover text too that would be cool
-// TODO: Fix the labels to not be the id
-// TODO: Why does it load twice?
 
 class Graph extends React.Component {
   constructor(props) {
