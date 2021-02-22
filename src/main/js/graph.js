@@ -83,6 +83,7 @@ class Graph extends React.Component {
       edges: parsed.edges,
     };
     const options = {
+      autoResize: true,
       nodes: {
         borderWidth: 2,
         color: {
