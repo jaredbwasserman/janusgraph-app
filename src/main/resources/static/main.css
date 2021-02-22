@@ -37,7 +37,7 @@ textarea {
 
 .query-request {
   width: 25vw;
-  height: 25vh;
+  height: 30%;
   font-size: 14px;
   overflow: auto;
   resize: none;
@@ -46,7 +46,7 @@ textarea {
 
 .query-result {
   width: 25vw;
-  height: 65vh;
+  height: 70%;
   font-size: 14px;
   overflow: auto;
   resize: none;
@@ -54,7 +54,7 @@ textarea {
 
 #graph {
   width: 50vw;
-  height: 90vh;
+  height: 100%;
   outline: none;
 }
 
@@ -64,7 +64,7 @@ textarea {
 
 .graph-info {
   width: 25vw;
-  height: 90vh;
+  height: 100%;
   font-size: 14px;
   overflow: auto;
   resize: none;
