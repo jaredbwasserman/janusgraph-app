@@ -58,6 +58,10 @@ textarea {
   outline: none;
 }
 
+#graph .vis-network:focus {
+  outline: none;
+}
+
 .graph-info {
   width: 25vw;
   height: 90vh;
