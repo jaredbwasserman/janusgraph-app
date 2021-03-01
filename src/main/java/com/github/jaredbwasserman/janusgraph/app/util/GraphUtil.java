@@ -13,16 +13,15 @@ import org.gephi.io.processor.plugin.DefaultProcessor;
 import org.gephi.project.api.ProjectController;
 import org.gephi.project.api.Workspace;
 import org.openide.util.Lookup;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
 
-// TODO: Add tests
-// TODO: Logging?
-
 public class GraphUtil {
+    private static final Logger logger = LoggerFactory.getLogger(GraphUtil.class);
 
-    // TODO: Should the return type be an object node or leave as String?
     public static String graphMLToJSON(byte[] bytes) {
         // Init a project - and therefore a workspace
         ProjectController pc = Lookup.getDefault().lookup(ProjectController.class);
@@ -35,7 +34,7 @@ public class GraphUtil {
         try {
             container = importController.importFile(new ByteArrayInputStream(bytes), new ImporterGraphML());
         } catch (Exception e) {
-            e.printStackTrace(); // TODO: Log
+            logger.debug(e.getMessage());
             return "";
         }
 
@@ -48,7 +47,7 @@ public class GraphUtil {
         try {
             exportController.exportWriter(stringWriter, new JSONExporter());
         } catch (Exception e) {
-            e.printStackTrace(); // TODO: Log
+            logger.debug(e.getMessage());
             return "";
         }
 

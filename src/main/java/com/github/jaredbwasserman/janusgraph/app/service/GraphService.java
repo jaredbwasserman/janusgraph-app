@@ -30,8 +30,6 @@ import org.springframework.stereotype.Service;
 import java.io.ByteArrayOutputStream;
 import java.util.concurrent.CompletableFuture;
 
-// TODO: Add tests and logging
-
 @Service
 public class GraphService {
     private final Logger logger = LoggerFactory.getLogger(GraphService.class);
@@ -68,7 +66,7 @@ public class GraphService {
             graph.io(IoCore.graphml()).writer().create().writeGraph(byteStream, graph);
             return GraphUtil.graphMLToJSON(byteStream.toByteArray());
         } catch (Exception e) {
-            e.printStackTrace(); // TODO: Log
+            logger.debug(e.getMessage());
             return "";
         }
     }
@@ -83,7 +81,7 @@ public class GraphService {
             }
             return result.toString();
         } catch (Exception e) {
-            e.printStackTrace(); // TODO: Log
+            logger.debug(e.getMessage());
             return e.getMessage();
         }
     }
