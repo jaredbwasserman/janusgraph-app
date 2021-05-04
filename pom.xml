@@ -14,6 +14,14 @@
     <name>janusgraph-app</name>
     <description>Demo project for Spring Boot</description>
 
+    <repositories>
+        <repository>
+            <id>netbeans</id>
+            <name>NetBeans</name>
+            <url>http://netbeans.apidesign.org/maven2/</url>
+        </repository>
+    </repositories>
+
     <properties>
         <java.version>11</java.version>
         <janusgraph.version>0.3.0</janusgraph.version>

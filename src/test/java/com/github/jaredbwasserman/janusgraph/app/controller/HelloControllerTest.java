@@ -42,7 +42,7 @@ public class HelloControllerTest {
     @Test
     public void helloShouldReturnMessageFromService() throws Exception {
         when(helloService.hello()).thenReturn("Hello, mock!");
-        this.mockMvc.perform(get("/hello")).andDo(print()).andExpect(status().isOk())
+        this.mockMvc.perform(get("/api/hello")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello, mock!")));
     }
 }
